@@ -2,30 +2,30 @@ var value = 0;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  setMoveThreshold(5);
+  setMoveThreshold(15);
 }
 
 function draw() {
-  background(0);
-  fill(255-value*10);
+  background(63, 0, 255);
+  fill(255);
   textAlign(CENTER);
-  textSize(50);
-  text('Wiggle!',width/2,450);
-   for(var j=0;j<=width/250+15;j++){
-	for(var i=0;i<=height/50+45;i++){
+  textSize(80);
+  text('Wiggle Me',width/2,750);
 
-      var r = random(250);
-      if (r<2) {
-        fill(value,value,r*50,450);
+  for(var i=0;i<=height/300+3;i++){
+    for(var j=0;j<=width/200+3;j++){
+      var r = 15;
+      if (r<10) {
+        fill(value,value,r*100,70);
       } else {
-        stroke(r*10,value,value,350);
+        fill(r*50,value,value,r*100,300);
       }
-      rect(j*500,400*j,value);
+      ellipse(j*200,200*i,value);
     }
   }
 
-  if(value>650){
-    value=random(120);
+  if(value>150){
+    value=20;
   }
 
 }
